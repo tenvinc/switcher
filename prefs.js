@@ -79,6 +79,9 @@ function buildWidgets() {
   let activeDisplayWidget = new Gtk.Box();
   addActiveDisplay(activeDisplayWidget, settings);
 
+  let closeAfterLaunchWidget = new Gtk.Box();
+  addCloseAfterLaunch(closeAfterLaunchWidget, settings);
+
   let showOriginalsWidget = new Gtk.Box();
   addBoolean(
     showOriginalsWidget,
@@ -109,6 +112,7 @@ function buildWidgets() {
     workspaceTip,
     fadeEffectWidget,
     activeDisplayWidget,
+    closeAfterLaunchWidget,
     showOriginalsWidget,
     showExecutablesWidget,
     onboardingWidgets
@@ -352,6 +356,15 @@ function addActiveDisplay(widget, settings) {
     settings,
     _('Show Switcher on active display'),
     'on-active-display'
+  );
+}
+
+function addCloseAfterLaunch(widget, settings) {
+  addBoolean(
+    widget,
+    settings,
+    _('Close Switcher after launching an app'),
+    'close-after-launch'
   );
 }
 

@@ -97,5 +97,9 @@
           <default>false</default>
           <summary>Should names of executables be shown?</summary>
         </key>
+        <key type="b" name="close-after-launch">
+            <default>false</default>
+            <summary>Whether to close Switcher after launching app</summary>
+        </key>
     </schema>
 </schemalist>

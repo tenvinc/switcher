@@ -338,7 +338,8 @@ function _showUI() {
             (x) => x.app.get_id() === app.get_id()
           );
           if (launcherAppForWindow) {
-            needCleanUI = false;
+            const close_after_launch = Convenience.getSettings().get_boolean('close-after-launch');
+            needCleanUI = close_after_launch ? true : false;
             launcherAppForWindow.activate(launcherAppForWindow.app);
             setTimeout(checkNewWindows, 50);
           } else {
