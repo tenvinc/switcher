@@ -353,7 +353,8 @@ function _showUI() {
           control &&
           symbol !== Clutter.KEY_j
         ) {
-          needCleanUI = false;
+          const close_after_launch = Convenience.getSettings().get_boolean('close-after-launch');
+          needCleanUI = close_after_launch ? true : false;
           setTimeout(checkNewWindows, 50);
         }
       }
